@@ -100,14 +100,10 @@ class ResNet(nn.Module):
                 m.bias.data.zero_()
 
     def forward(self, x):
-        print(x.shape)
         x = self.pre(x)
-        print(x.shape)
         x = self.body(x)
-        print(x.shape)
         x = nn.AvgPool2d(7)(x)  # kernel_size为7是因为经过多次下采样之后feature map的大小为7*7，即224->112->56->28->14->7
         x = x.view(x.size(0), -1)
-        #return input
         x = self.classifier(x)
         return x
 

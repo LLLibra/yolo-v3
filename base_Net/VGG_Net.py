@@ -69,6 +69,7 @@ def make_layers(cfg,batch_norm=False):
             in_channels = v
     return nn.Sequential(*layers)
 
+
 cfg = {
     'vgg11':[64, 'M', 128, 'M', 256, 256, 'M', 512, 512, 'M', 512, 512, 'M'],
     'vgg13':[64, 64, 'M', 128, 128, 'M', 256, 256, 'M', 512, 512, 'M', 512, 512, 'M'],
