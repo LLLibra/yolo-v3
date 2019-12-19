@@ -3,7 +3,11 @@ import torch
 from torch import nn
 import math
 
-
+##输入是224*224
+# 1、减轻了vanishing-gradient（梯度消失）
+# 2、加强了feature的传递
+# 3、更有效地利用了feature
+# 4、一定程度上较少了参数数量
 
 class DenseLayer(nn.Module):
     def __init__(self,input_size,growth_rate,bn_size):

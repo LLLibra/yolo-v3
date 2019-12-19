@@ -1,3 +1,4 @@
+# -*- coding:UTF-8 -*-
 import torch
 import torch.nn as nn
 import math
@@ -54,12 +55,14 @@ class VGG_Net(nn.Module):
 
 
 
-def make_layers(cfg,batch_norm=False):
+def make_layers(cfg,batch_norm=False,SSD=False):
     layers = []
     in_channels = 3
     for v in cfg:
         if v == 'M':
             layers += [nn.MaxPool2d(kernel_size=2,stride=2)]
+        elif v == 'C':
+            layers += [nn.MaxPool2d(kernel_size=2, stride=2,ceil_mode=True)]
         else:
             conv2d = nn.Conv2d(in_channels,v,kernel_size=3,padding=1)
             if batch_norm:
@@ -67,6 +70,8 @@ def make_layers(cfg,batch_norm=False):
             else:
                 layers += [conv2d,nn.ReLU(inplace=True)]
             in_channels = v
+    if SSD:
+        return layers
     return nn.Sequential(*layers)
 
 
@@ -94,6 +99,15 @@ def VGG16(**kwargs):
 def VGG19(**kwargs):
     model = VGG_Net(make_layers(cfg['vgg19'],batch_norm=True),**kwargs)
     return model
+
+def VGG16_SSD():
+    cfg['vgg16'][9]='C'
+    layers = make_layers(cfg['vgg16'][:-1],batch_norm=False,SSD=True)
+    pool5 = nn.MaxPool2d(kernel_size=3,stride=1,padding=1)
+    layers6 =  nn.Conv2d(512,1024,kernel_size=3,padding=6,dilation=6) ##atrous algorithm 其实就是空洞卷积
+    layers7 =  nn.Conv2d(1024,1024,kernel_size=1)
+    layers += [pool5,layers6,nn.ReLU(inplace=True),layers7,nn.ReLU(inplace=True)]
+    return layers
 
 
 if __name__ == '__main__':

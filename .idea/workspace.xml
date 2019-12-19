@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d5d8e72-75db-47c5-91f2-49173d4c151d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/base_Net/Dense_Net.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dataset/COCODataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dataset/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/SSD.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base_Net/Inception.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base_Net/SE_Net.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base_Net/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/augmentation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base_Net/Res_Net.py" beforeDir="false" afterPath="$PROJECT_DIR$/base_Net/Res_Net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base_Net/Dense_Net.py" beforeDir="false" afterPath="$PROJECT_DIR$/base_Net/Dense_Net.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/base_Net/VGG_Net.py" beforeDir="false" afterPath="$PROJECT_DIR$/base_Net/VGG_Net.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/base_Net/VGG_Net.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2967">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            <state relative-caret-position="-2465">
+              <caret column="22" selection-start-column="22" selection-end-column="22" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -27,11 +36,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/base_Net/Dense_Net.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dataset/COCODataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1161">
-              <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+            <state relative-caret-position="258">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="e#23#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Model/SSD.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="559">
+              <caret line="451" column="14" selection-start-line="451" selection-start-column="14" selection-end-line="451" selection-end-column="14" />
               <folding>
                 <element signature="e#23#35#0" expanded="true" />
               </folding>
@@ -40,12 +61,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/base_Net/Res_Net.py">
+        <entry file="file://$PROJECT_DIR$/utils/augmentation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="860">
-              <caret line="59" column="33" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="33" />
+            <state relative-caret-position="-9449">
+              <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
               <folding>
-                <element signature="e#23#35#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="516">
+              <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,6 +96,23 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>pri</find>
+      <find>dr</find>
+      <find>avg</find>
+      <find>PriorBox</find>
+      <find>match</find>
+      <find>conf_t,idx</find>
+      <find>log_sum_exp</find>
+      <find>best_truth_overlap</find>
+      <find>license</find>
+      <find>maxdepth</find>
+      <find>RandomSaturation</find>
+      <find>RandomHue</find>
+      <find>RandomSampleCrop</find>
+      <find>COCO_ROOT</find>
+      <find>ConvertColor</find>
+      <find>MultiBoxLoss</find>
+      <find>L2Norm</find>
+      <find>target</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -72,9 +122,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/base_Net/ResNet.py" />
-        <option value="$PROJECT_DIR$/base_Net/VGG_Net.py" />
         <option value="$PROJECT_DIR$/base_Net/Res_Net.py" />
         <option value="$PROJECT_DIR$/base_Net/Dense_Net.py" />
+        <option value="$PROJECT_DIR$/SE_Net.py" />
+        <option value="$PROJECT_DIR$/base_Net/SE_Net.py" />
+        <option value="$PROJECT_DIR$/base_Net/Inception.py" />
+        <option value="$PROJECT_DIR$/scripts/COCO2014.sh" />
+        <option value="$PROJECT_DIR$/util/augmentation.py" />
+        <option value="$PROJECT_DIR$/scripts/__init__.py" />
+        <option value="$PROJECT_DIR$/utils/augmentation.py" />
+        <option value="$PROJECT_DIR$/Dataset/COCODataset.py" />
+        <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/base_Net/VGG_Net.py" />
+        <option value="$PROJECT_DIR$/Model/SSD.py" />
       </list>
     </option>
   </component>
@@ -101,6 +161,21 @@
               <item name="yolo-v3" type="462c0819:PsiDirectoryNode" />
               <item name="base_Net" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="yolo-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yolo-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="Dataset" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yolo-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yolo-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yolo-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yolo-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -111,6 +186,17 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/base_Net" />
+      <recent name="$PROJECT_DIR$/Dataset" />
+      <recent name="$PROJECT_DIR$/Model" />
+      <recent name="$PROJECT_DIR$/utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/base_Net" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -137,6 +223,15 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="2030" y="-7" width="3730" height="2167" extended-state="6" />
     <editor active="true" />
@@ -145,7 +240,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32978156" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -161,20 +256,70 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/base_Net/VGG_Net.py">
+    <entry file="file://$PROJECT_DIR$/scripts/nohup.out" />
+    <entry file="file:///media/elliot/Elements/数据集/coco/annotations/instances_val2014.json">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-540620">
+          <caret column="190" selection-start-column="183" selection-end-column="190" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base_Net/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/COCO2014.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2967">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="1303">
+          <caret line="62" column="26" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/augmentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9449">
+          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base_Net/SE_Net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#23#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/base_Net/Res_Net.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="59" column="33" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="33" />
+        <state relative-caret-position="5504">
+          <caret line="128" selection-start-line="128" selection-end-line="134" selection-end-column="20" />
+          <folding>
+            <element signature="e#23#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base_Net/Inception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="289" selection-end-column="20" />
           <folding>
             <element signature="e#23#35#0" expanded="true" />
           </folding>
@@ -183,8 +328,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/base_Net/Dense_Net.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1161">
-          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        <state relative-caret-position="2408">
+          <caret line="56" column="37" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="37" />
+          <folding>
+            <element signature="e#23#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/COCODataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#23#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base_Net/VGG_Net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2465">
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/SSD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="451" column="14" selection-start-line="451" selection-start-column="14" selection-end-line="451" selection-end-column="14" />
           <folding>
             <element signature="e#23#35#0" expanded="true" />
           </folding>
