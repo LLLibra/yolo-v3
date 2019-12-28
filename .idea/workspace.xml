@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d5d8e72-75db-47c5-91f2-49173d4c151d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dataset/COCODataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dataset/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/SSD.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_Net/Inception.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_Net/SE_Net.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base_Net/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/augmentation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config/ssd_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config/train_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config/yolo_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/YOLO_V3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base_Net/DarkNet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ssd_loss.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/yolo_loss.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base_Net/Dense_Net.py" beforeDir="false" afterPath="$PROJECT_DIR$/base_Net/Dense_Net.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base_Net/VGG_Net.py" beforeDir="false" afterPath="$PROJECT_DIR$/base_Net/VGG_Net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset/COCODataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/COCODataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/SSD.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/SSD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,12 +25,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="750">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/base_Net/VGG_Net.py">
+        <entry file="file://$PROJECT_DIR$/Config/yolo_config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2465">
-              <caret column="22" selection-start-column="22" selection-end-column="22" />
+            <state relative-caret-position="774">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
               <folding>
-                <element signature="e#0#12#0" expanded="true" />
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Config/ssd_config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="774">
+              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+              <folding>
+                <element signature="e#23#51#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,22 +51,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dataset/COCODataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="-3182">
+              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
               <folding>
                 <element signature="e#23#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Model/SSD.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="451" column="14" selection-start-line="451" selection-start-column="14" selection-end-line="451" selection-end-column="14" />
-              <folding>
-                <element signature="e#23#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,25 +63,51 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/augmentation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9449">
-              <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="1333">
+              <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1509">
+              <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="45" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#23#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train.py">
+        <entry file="file://$PROJECT_DIR$/utils/yolo_loss.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="34" />
+            <state relative-caret-position="7783">
+              <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#23#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1161">
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+              <folding>
+                <element signature="e#23#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Config/train_config.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -95,24 +121,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pri</find>
-      <find>dr</find>
-      <find>avg</find>
-      <find>PriorBox</find>
-      <find>match</find>
-      <find>conf_t,idx</find>
-      <find>log_sum_exp</find>
-      <find>best_truth_overlap</find>
-      <find>license</find>
-      <find>maxdepth</find>
-      <find>RandomSaturation</find>
-      <find>RandomHue</find>
-      <find>RandomSampleCrop</find>
       <find>COCO_ROOT</find>
       <find>ConvertColor</find>
       <find>MultiBoxLoss</find>
       <find>L2Norm</find>
+      <find>encode</find>
+      <find>decode</find>
+      <find>center_size</find>
+      <find>point_form</find>
+      <find>match</find>
+      <find>get_target</find>
+      <find>bbox_iou</find>
+      <find>model</find>
+      <find>loc_p</find>
+      <find>101</find>
+      <find>conf_data</find>
+      <find>pos</find>
+      <find>self.background_label</find>
+      <find>conf</find>
+      <find>80</find>
+      <find>COCOAnnotationTransform</find>
       <find>target</find>
+      <find>cuda</find>
+      <find>ToPercentCoords</find>
+      <find>ConverFromInts</find>
+      <find>ToAbsoluteCoords</find>
+      <find>PhotometricDistort</find>
+      <find>rand_brightness</find>
+      <find>target_transform</find>
+      <find>boxes</find>
+      <find>self.bce_loss</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,24 +169,37 @@
         <option value="$PROJECT_DIR$/util/augmentation.py" />
         <option value="$PROJECT_DIR$/scripts/__init__.py" />
         <option value="$PROJECT_DIR$/utils/augmentation.py" />
-        <option value="$PROJECT_DIR$/Dataset/COCODataset.py" />
-        <option value="$PROJECT_DIR$/train.py" />
         <option value="$PROJECT_DIR$/base_Net/VGG_Net.py" />
+        <option value="$PROJECT_DIR$/base_Net/DarkNet.py" />
+        <option value="$PROJECT_DIR$/Config/model_config.py" />
+        <option value="$PROJECT_DIR$/Config/yolo-config.py" />
+        <option value="$PROJECT_DIR$/utils/Model_Loss.py" />
         <option value="$PROJECT_DIR$/Model/SSD.py" />
+        <option value="$PROJECT_DIR$/Model/YOLO-V3.py" />
+        <option value="$PROJECT_DIR$/Config/train_config.py" />
+        <option value="$PROJECT_DIR$/utils/ssd_loss.py" />
+        <option value="$PROJECT_DIR$/Model/YOLO_V3.py" />
+        <option value="$PROJECT_DIR$/utils/utils.py" />
+        <option value="$PROJECT_DIR$/Config/yolo_config.py" />
+        <option value="$PROJECT_DIR$/Config/ssd_config.py" />
+        <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/Dataset/COCODataset.py" />
+        <option value="$PROJECT_DIR$/utils/yolo_loss.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2029" />
-    <option name="y" value="7" />
-    <option name="width" value="3732" />
-    <option name="height" value="2154" />
+    <option name="x" value="1919" />
+    <option name="y" value="-11" />
+    <option name="width" value="3842" />
+    <option name="height" value="2172" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -160,6 +211,11 @@
               <item name="yolo-v3" type="b2602c69:ProjectViewProjectNode" />
               <item name="yolo-v3" type="462c0819:PsiDirectoryNode" />
               <item name="base_Net" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yolo-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yolo-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="Config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yolo-v3" type="b2602c69:ProjectViewProjectNode" />
@@ -176,26 +232,31 @@
               <item name="yolo-v3" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="yolo-v3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yolo-v3" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/base_Net" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Config" />
       <recent name="$PROJECT_DIR$/base_Net" />
       <recent name="$PROJECT_DIR$/Dataset" />
       <recent name="$PROJECT_DIR$/Model" />
       <recent name="$PROJECT_DIR$/utils" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/base_Net" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -233,10 +294,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2030" y="-7" width="3730" height="2167" extended-state="6" />
-    <editor active="true" />
+    <frame x="1983" y="-4" width="3777" height="2164" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25006804" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19639978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -254,19 +314,30 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19639978" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32978156" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/nohup.out" />
-    <entry file="file:///media/elliot/Elements/数据集/coco/annotations/instances_val2014.json">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="-540620">
-          <caret column="190" selection-start-column="183" selection-end-column="190" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file:///media/elliot/Elements/数据集/coco/annotations/instances_val2014.json" />
+    <entry file="file://$PROJECT_DIR$/scripts/__init__.py" />
     <entry file="file://$PROJECT_DIR$/utils/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -283,16 +354,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1303">
           <caret line="62" column="26" selection-start-line="62" selection-start-column="15" selection-end-line="62" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/augmentation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9449">
-          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -336,42 +397,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dataset/COCODataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#23#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/base_Net/VGG_Net.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2465">
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        <state relative-caret-position="860">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base_Net/DarkNet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4085">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Config/model_config.py" />
+    <entry file="file://$PROJECT_DIR$/Config/yolo-config.py" />
+    <entry file="file://$PROJECT_DIR$/Config/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Model/SSD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="451" column="14" selection-start-line="451" selection-start-column="14" selection-end-line="451" selection-end-column="14" />
+        <state relative-caret-position="258">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="e#23#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/ssd_loss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3053">
+          <caret line="99" column="39" selection-start-line="99" selection-start-column="39" selection-end-line="99" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/YOLO_V3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2705">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config/yolo_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config/ssd_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding>
+            <element signature="e#23#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config/train_config.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset/COCODataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3182">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="e#23#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/augmentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1333">
+          <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1509">
+          <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="45" />
+          <folding>
+            <element signature="e#23#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/yolo_loss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7783">
+          <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+          <folding>
+            <element signature="e#23#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1161">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <element signature="e#23#32#0" expanded="true" />
           </folding>
         </state>
       </provider>

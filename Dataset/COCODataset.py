@@ -11,6 +11,7 @@ import numpy as np
 sys.path.append("..")
 
 from utils.augmentation import SSDAugmentation
+from utils.utils import center_size
 
 ##https://blog.csdn.net/gzj2013/article/details/82421166
 ##https://blog.csdn.net/u013832707/article/details/94445495
@@ -75,19 +76,21 @@ class COCOAnnotationTransform(object):
             if 'bbox' in obj:
                 bbox = obj['bbox']
                 bbox[2] += bbox[0]
-                bbox[3] += bbox[1]
+                bbox[3] += bbox[1]# [xmin, ymin, xmax, ymax, label_idx]
+
+
                 label_idx = self.label_map[obj['category_id']] - 1
                 final_box = list(np.array(bbox)/scale)
-                final_box.append(label_idx)
-                res += [final_box] # [xmin, ymin, xmax, ymax, label_idx]
 
+                final_box.append(label_idx)
+                res += [final_box]
 
         return res # [[xmin, ymin, xmax, ymax, label_idx], ... ]
 
 
 class COCODetection(data.Dataset):
 
-    def __init__(self,root,image_set='train2014',transform=None,target_transform=COCOAnnotationTransform(),dataset_name='MS COCO'):
+    def __init__(self,root,xywh,image_set='train2014',transform=None,target_transform=COCOAnnotationTransform(),dataset_name='MS COCO'):
         # sys.path.append(os.path.join(root,COCO_API))
         from pycocotools.coco import COCO
 
@@ -98,11 +101,11 @@ class COCODetection(data.Dataset):
         self.transform = transform
         self.target_transform = target_transform
         self.name = dataset_name
+        self.xywh = xywh #图片格式
 
     def __getitem__(self, index):
 
         im,gt,h,w = self.pull_item(index)
-        print(im.shape,"..",gt.shape)
         return im,gt
 
     def __len__(self):
@@ -125,9 +128,14 @@ class COCODetection(data.Dataset):
         if self.transform is not None:
             target = np.array(target)
             img,boxes,labels = self.transform(img,target[:,:4],target[:,4])
+            if self.xywh:
+                box = boxes
+                boxes[:,:2] = (box[:,2:]+box[:,:2])/2
+                boxes[:,2:] = box[:, 2:]-box[:, :2]
 
             img = img[:,:,(2,1,0)]
             target = np.hstack((boxes,np.expand_dims(labels,axis=1)))
+
 
         return torch.from_numpy(img).permute(2,0,1),target,height,width
 
@@ -157,9 +165,9 @@ class COCODetection(data.Dataset):
     #     return fmt_str
 
 
-def get_COCODataLoader(batch_size,num_workers):
+def get_COCODataLoader(batch_size,num_workers,img_size,xywh):
     MEANS = (104, 117, 123)
-    dataset = COCODetection(root=COCO_ROOT, transform=SSDAugmentation(300, MEANS))
+    dataset = COCODetection(root=COCO_ROOT,xywh=xywh, transform=SSDAugmentation(img_size, MEANS))
     data_loader = data.DataLoader(dataset,
                                   batch_size=batch_size,
                                   num_workers=num_workers,
@@ -173,7 +181,7 @@ def get_COCODataLoader(batch_size,num_workers):
 
 if __name__ == '__main__':
     MEANS = (104, 117, 123)
-    dataset = COCODetection(root=COCO_ROOT,transform=SSDAugmentation(300,MEANS))
+    dataset = COCODetection(root=COCO_ROOT,xywh=True,transform=SSDAugmentation(size=416,mean=MEANS))
     data_loader = data.DataLoader(dataset,
                                   batch_size=32,
                                   #num_workers=args.num_workers,
@@ -185,8 +193,48 @@ if __name__ == '__main__':
     print(len(data_loader))
     for image,label in data_loader:
         print("image",image.shape)
-        # label = torch.tensor(label)
-        print("labels:",label)
+        for i in label:
+            print("labels:",i)
+
+##
+# 初始的coco数据集里的box是原始像素的 并且是xywh格式
+# target_transform中将box转为百分比 并且是x1,y1,x2,y2格式
+# 最后一个是标签
+# ('image', (32, 3, 300, 300))
+# ('labels:', (5, 5))
+# ('labels:', (6, 5))
+# ('labels:', (1, 5))
+# ('labels:', (2, 5))
+# ('labels:', (6, 5))
+# ('labels:', (1, 5))
+# ('labels:', (4, 5))
+# ('labels:', (8, 5))
+# ('labels:', (2, 5))
+# ('labels:', (1, 5))
+# ('labels:', (19, 5))
+# ('labels:', (2, 5))
+# ('labels:', (1, 5))
+# ('labels:', (7, 5))
+# ('labels:', (1, 5))
+# ('labels:', (12, 5))
+# ('labels:', (1, 5))
+# ('labels:', (8, 5))
+# ('labels:', (5, 5))
+# ('labels:', (1, 5))
+# ('labels:', (3, 5))
+# ('labels:', (1, 5))
+# ('labels:', (2, 5))
+# ('labels:', (3, 5))
+# ('labels:', (4, 5))
+# ('labels:', (24, 5))
+# ('labels:', (7, 5))
+# ('labels:', (4, 5))
+# ('labels:', (7, 5))
+# ('labels:', (5, 5))
+# ('labels:', (5, 5))
+# ('labels:', (13, 5))
+
+
 
 
 
